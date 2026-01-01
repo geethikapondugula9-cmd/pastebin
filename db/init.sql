@@ -1,0 +1,11 @@
+sCREATE DATABASE IF NOT EXISTS pastedb;
+USE pastedb;
+
+CREATE TABLE IF NOT EXISTS pastes (
+  id VARCHAR(32) PRIMARY KEY,
+  content TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  expires_at DATETIME NULL,
+  max_views INT NULL,
+  views INT DEFAULT 0
+);
